@@ -6,7 +6,7 @@ require("dotenv").config();
 require("@nomiclabs/hardhat-ethers");
 
 module.exports = {
-  solidity: "0.8.0",
+  solidity: "0.8.7",
   networks: {
     sepolia: {
       url: "https://eth-sepolia.g.alchemy.com/v2/MoJ21ZXES5GY3CN0xoI6BjGQus5WozmH",

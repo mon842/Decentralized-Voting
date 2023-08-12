@@ -1,11 +1,11 @@
-const contractAddress = "0x45bFd790781d030C215b8a2738f86bA576F23cD4";
+const contractAddress = " 0x8381e501475DD6A302A0B0f6dCA64818394Af57d";
 
 const contractAbi = [
   {
     inputs: [
       {
         internalType: "string[]",
-        name: "_candidateNames",
+        name: "_candidateName",
         type: "string[]",
       },
       {
@@ -18,10 +18,51 @@ const contractAbi = [
     type: "constructor",
   },
   {
+    inputs: [],
+    name: "Not__A__Owner",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "Time__For__Voting__Has__Expired",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "Wrong__Voting__Time",
+    type: "error",
+  },
+  {
+    inputs: [],
+    name: "EndVote",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "StartVote",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
     inputs: [
       {
         internalType: "string",
-        name: "_name",
+        name: "_candidateName",
         type: "string",
       },
     ],
@@ -71,7 +112,7 @@ const contractAbi = [
             type: "uint256",
           },
         ],
-        internalType: "struct Voting.Candidate[]",
+        internalType: "struct voting.Candidate[]",
         name: "",
         type: "tuple[]",
       },
@@ -81,7 +122,7 @@ const contractAbi = [
   },
   {
     inputs: [],
-    name: "getRemainingTime",
+    name: "getRemainingTimeForVoting",
     outputs: [
       {
         internalType: "uint256",
@@ -109,7 +150,7 @@ const contractAbi = [
     inputs: [
       {
         internalType: "uint256",
-        name: "_candidateIndex",
+        name: "_CandidateIndex",
         type: "uint256",
       },
     ],
@@ -132,32 +173,6 @@ const contractAbi = [
         internalType: "bool",
         name: "",
         type: "bool",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "votingEnd",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "votingStart",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
       },
     ],
     stateMutability: "view",
