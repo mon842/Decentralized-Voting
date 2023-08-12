@@ -1,9 +1,11 @@
 import React from "react";
+import Header from "./Header/Header";
 
 const Finished = (props) => {
     return (
-        <div className="login-container">
-            <h1 className="welcome-message">Voting is Finished</h1>
+        <div className="bg-[#141420] h-screen">
+            <Header/>
+            <h1 className="welcome-message text-white font-bold"><span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-600  via-[#c905ff] to-purple-500">Voting</span> is Finished</h1>
         </div>
     )
 }
