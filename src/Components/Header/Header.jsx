@@ -27,6 +27,8 @@ const Header = () => {
 
 
   const [act, setAct] = useState('');
+  const [toggle, setToggle] = useState(true);
+  
 
   const handleClick = () => {
     if (act === '')
@@ -43,7 +45,7 @@ const Header = () => {
       <div className=''>
       <ul className={`flex items-center gap-[5vw] nav-menu text-white ${act}`}>
         <li className='nav-item'>
-          <a href='\' className="hover:text-dark-pink hover:underline underline-offset-3 visited: underline decoration-dark-pink">Home</a>
+          <a href='\' className="hover:text-dark-pink hover:underline underline-offset-3">Home</a>
         </li>
         <li className='nav-item'>
           <a href='\About' className="hover:text-dark-pink hover:underline underline-offset-3">About</a>
@@ -53,8 +55,8 @@ const Header = () => {
         </li>
         <li>
           <div className="relative group">
-            <div className=" absolute inset-1 bg-[#b2b7c1] rounded-lg blur hover:blur-2xl opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-            <button className="transition duration-200 ease-in transform   hover:scale-105  px-10 py-4 rounded-3xl font-bold text-gray-400 hover:text-white bg-[#1d1d27] hover:bg-gradient-to-r from-[#ff05c9] via-[#c905ff] to-[#8402cf]">Star Us on GitHub</button>
+            <div className=" absolute inset-1 bg-[#000000] rounded-lg blur hover:blur-2xl opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <button className="hover:outline-none hover:ring hover:ring-fuchsia-600 transition duration-200 ease-in transform   hover:scale-105  px-10 py-4 rounded-3xl font-bold text-gray-400 hover:text-white bg-[#262636] hover:bg-gradient-to-r from-[#ff05c9] via-[#c905ff] to-[#8402cf]">Star Us on GitHub</button>
           </div>
         </li>
       </ul>

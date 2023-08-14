@@ -3,7 +3,7 @@ import Header from "./Header/Header";
 
 const Login = (props) => {
     return (
-        <div className="h-[200vh]">
+        <div className="">
             <Header/>
             <div className="login-container ">
 
