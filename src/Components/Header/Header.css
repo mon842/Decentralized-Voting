@@ -22,11 +22,10 @@
     .nav-menu{
         position: fixed;
         right: -100%;
-        top:80px;
-        /* top:-100%; */
+        top:100px;
+
         gap: 0;
         flex-direction: column;
-        background-color: #141420;
         width: 100%;
         transition: 0.5s ;
     }
@@ -34,8 +33,7 @@
         margin: 2rem;
     }
     .nav-menu.active{
-        /* left: 0%; */
-        /* top: 100px; */
+        top: 0px;
         right: 0;
     }
 }

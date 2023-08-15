@@ -1,6 +1,6 @@
 import { useEffect, useState, React } from 'react'
 import './Header.css';
-
+import logo from '../logo.png';
 
 const Header = () => {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
@@ -26,6 +26,8 @@ const Header = () => {
 
 
   const [act, setAct] = useState('');
+  const [navblur, setNavBlur] = useState('bg-opacity-60 bg-transparent backdrop-blur-xl');
+  const [blur, setBlur] = useState('');
 
   const handleClick = () => {
     if (act === '')
@@ -33,11 +35,24 @@ const Header = () => {
     else
       setAct('');
   }
-  return (
-    <nav className='h-32 flex justify-between items-center py-[24px] md:px-6 lg:px-6 bg-[#141420]'>
-      <img className='h-6' src="https://surrealdb.com/static/img/logo-2232dc8d2a09e077d26daeca5e2b5cb9.svg" alt="ar" srcset="" />
 
-      <ul className={`flex px-3 justify-between items-center space-x-10 nav-menu text-white ${act}`}>
+  useEffect(()=>{
+    if (act === ''){
+      setNavBlur('bg-opacity-60 bg-transparent backdrop-blur-xl');
+      setBlur('') 
+    }
+    else{
+      setNavBlur('');
+      setBlur('bg-opacity-60 bg-transparent backdrop-blur-xl');
+    }
+
+  },[act]);
+
+  return (
+    <nav className={`z-10 fixed top-0 left-0 right-0  h-32 flex justify-between items-center py-[24px] md:px-6 lg:px-6 bg-[#141420] ${navblur}`}>
+      <img className='h-20' src={logo} alt="ar" srcset="" />
+
+      <ul className={`rounded-xl sm:mt-3 flex px-3 justify-between items-center space-x-10 nav-menu sm:bg-opacity-0 text-white ${blur} bg-[#141420] ${act} `}>
         <li className='nav-item'>
           <a href='\' className="ml-10">Home</a>
         </li>

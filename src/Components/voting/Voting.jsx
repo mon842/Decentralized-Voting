@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-// import { contractAbi, contractAddress } from './Constant/constant';
-// import Login from './Components/Login';
-// import Finished from './Components/Finished';
-// import Connected from './Connected';
+
 import './Voting.css';
 import { contractAbi, contractAddress } from '../../Constant/constant';
 import Connected from '../Connected';
@@ -142,8 +139,8 @@ const Voting = () => {
   }
 
   return (
-    <div className=''>
-      {/* <Header/> */}
+    <div className='bg-[#141420]'>
+
       {votingStatus ? (isConnected ? (<Connected
         account={account}
         candidates={candidates}
@@ -152,7 +149,6 @@ const Voting = () => {
         handleNumberChange={handleNumberChange}
         voteFunction={vote}
         showButton={CanVote} />)  : (<Login connectWallet={connectToMetamask} />)) : (<Finished />)}
-
     </div>
   );
 }
