@@ -141,14 +141,23 @@ const Voting = () => {
   return (
     <div className='bg-[#141420]'>
 
-      {votingStatus ? (isConnected ? (<Connected
+      {/* {votingStatus ? (isConnected ? (<Connected
         account={account}
         candidates={candidates}
         remainingTime={remainingTime}
         number={number}
         handleNumberChange={handleNumberChange}
         voteFunction={vote}
-        showButton={CanVote} />)  : (<Login connectWallet={connectToMetamask} />)) : (<Finished />)}
+        showButton={CanVote} />)  : (<Login connectWallet={connectToMetamask} />)) : (<Finished account={account} />)} */}
+
+        <Connected
+        account={account}
+        candidates={candidates}
+        remainingTime={remainingTime}
+        number={number}
+        handleNumberChange={handleNumberChange}
+        voteFunction={vote}
+        showButton={CanVote} />
     </div>
   );
 }
