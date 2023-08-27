@@ -16,6 +16,7 @@ const Voting = () => {
   const [votingStatus, setVotingStatus] = useState(true);
   const [remainingTime, setremainingTime] = useState('');
   const [candidates, setCandidates] = useState([]);
+  const [name, setName]=useState('');
   const [number, setNumber] = useState('');
   const [CanVote, setCanVote] = useState(true);
 
@@ -43,7 +44,7 @@ const Voting = () => {
     const contractInstance = new ethers.Contract(
       contractAddress, contractAbi, signer
     );
-
+      console.log(number);
     const tx = await contractInstance.vote(number);
     await tx.wait();
     canVote();
@@ -136,6 +137,7 @@ const Voting = () => {
 
   async function handleNumberChange(e) {
     setNumber(e.target.value);
+    console.log(e.target.value);
   }
 
   return (
@@ -143,12 +145,13 @@ const Voting = () => {
 
       {/* {votingStatus ? (isConnected ? (<Connected
         account={account}
+        name={name}
         candidates={candidates}
         remainingTime={remainingTime}
         number={number}
         handleNumberChange={handleNumberChange}
         voteFunction={vote}
-        showButton={CanVote} />)  : (<Login connectWallet={connectToMetamask} />)) : (<Finished account={account} />)} */}
+        showButton={CanVote} />)  : (<Login connectWallet={connectToMetamask} setName={setName} name={name}/>)) : (<Finished account={account} />)} */}
 
         <Connected
         account={account}
