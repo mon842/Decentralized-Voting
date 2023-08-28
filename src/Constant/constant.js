@@ -1,4 +1,4 @@
-const contractAddress = " 0x8381e501475DD6A302A0B0f6dCA64818394Af57d";
+const contractAddress = "0xFfD84a79507B3Dd3e615d811677A1DF414b73C8E";
 
 const contractAbi = [
   {
@@ -112,7 +112,7 @@ const contractAbi = [
             type: "uint256",
           },
         ],
-        internalType: "struct voting.Candidate[]",
+        internalType: "struct Voting.Candidate[]",
         name: "",
         type: "tuple[]",
       },
@@ -179,5 +179,4 @@ const contractAbi = [
     type: "function",
   },
 ];
-
 export { contractAbi, contractAddress };
