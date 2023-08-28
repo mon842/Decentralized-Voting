@@ -104,7 +104,7 @@ const Voting = () => {
     const time = await contractInstance.getRemainingTime();
     setremainingTime(parseInt(time, 16));
   }
-
+  
   function handleAccountsChanged(accounts) {
     if (accounts.length > 0 && account !== accounts[0]) {
       setAccount(accounts[0]);
@@ -143,7 +143,7 @@ const Voting = () => {
   return (
     <div className='bg-[#141420]'>
 
-      {/* {votingStatus ? (isConnected ? (<Connected
+      {votingStatus ? (isConnected ? (<Connected
         account={account}
         name={name}
         candidates={candidates}
@@ -151,16 +151,16 @@ const Voting = () => {
         number={number}
         handleNumberChange={handleNumberChange}
         voteFunction={vote}
-        showButton={CanVote} />)  : (<Login connectWallet={connectToMetamask} setName={setName} name={name}/>)) : (<Finished account={account} />)} */}
+        showButton={CanVote} />)  : (<Login connectWallet={connectToMetamask} setName={setName} name={name}/>)) : (<Finished account={account} />)}
 
-        <Connected
+        {/* <Connected
         account={account}
         candidates={candidates}
         remainingTime={remainingTime}
         number={number}
         handleNumberChange={handleNumberChange}
         voteFunction={vote}
-        showButton={CanVote} />
+        showButton={CanVote} /> */}
     </div>
   );
 }

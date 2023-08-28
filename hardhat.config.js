@@ -6,7 +6,7 @@ require("dotenv").config();
 require("@nomiclabs/hardhat-ethers");
 
 module.exports = {
-  solidity: "0.8.0",
+  solidity: "0.8.7",
   networks: {
     sepolia: {
       url: "https://eth-sepolia.g.alchemy.com/v2/kTNcmhw9xvVUHa9-NXgyXVBYvgr3mBTY",
@@ -16,6 +16,9 @@ module.exports = {
     },
   },
 };
+
+
+
 // https://eth-sepolia.g.alchemy.com/v2/uecsvzYkFB61tAniKW3P47a_5_oPrcQ6
 // c9d1c385dba17022230094f256e1d6128fea90a410c503a9c3c1e94cc2ce1380
 

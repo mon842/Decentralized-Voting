@@ -1,11 +1,11 @@
-const contractAddress = "0xCBda02c341fd27d47cAa7CD4df0EE596076156e9";
+const contractAddress = "0xe01DfF61F1bDa73DCf37C4a670F4E831e6AadE0C";
 
 const contractAbi =  [
   {
     "inputs": [
       {
         "internalType": "string[]",
-        "name": "_candidateNames",
+        "name": "_candidateName",
         "type": "string[]"
       },
       {
@@ -18,10 +18,51 @@ const contractAbi =  [
     "type": "constructor"
   },
   {
+    "inputs": [],
+    "name": "Not__A__Owner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Time__For__Voting__Has__Expired",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Wrong__Voting__Time",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EndVote",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "StartVote",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "string",
-        "name": "_name",
+        "name": "_candidateName",
         "type": "string"
       }
     ],
@@ -109,7 +150,7 @@ const contractAbi =  [
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_candidateIndex",
+        "name": "_CandidateIndex",
         "type": "uint256"
       }
     ],
@@ -132,32 +173,6 @@ const contractAbi =  [
         "internalType": "bool",
         "name": "",
         "type": "bool"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "votingEnd",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "votingStart",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
       }
     ],
     "stateMutability": "view",

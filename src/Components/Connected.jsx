@@ -5,16 +5,12 @@ import { Button, IconButton, Snackbar } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 
 const Connected = (props) => {
-
-
-
     const dp = 'https://im.indiatimes.in/content/2022/Jul/tere-naam_62d938217e409.jpg'
     
     const acc1=props.account.substring(0, 5);
     const acc2=props.account.substring(props.account.length-5 , props.account.length);
 
-
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
@@ -37,7 +33,7 @@ const Connected = (props) => {
           </IconButton>
         </React.Fragment>
       );
-
+        // console.log(props.candidates);
     const click=(e)=>{
         props.handleNumberChange(e);
     }
