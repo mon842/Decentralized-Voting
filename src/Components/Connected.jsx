@@ -66,18 +66,18 @@ const Connected = (props) => {
             
             
 
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-20">
-                <table className="w-full text-sm text-left text-gray-100 ">
-                    <thead className="text-xs text-gray-100 uppercase from-gray-900 via-purple-800 to-purple-900 ">
+            <div className="shadow-md sm:rounded-xl mt-20">
+                <table className=" w-full text-sm text-left text-gray-100 border-separate border-spacing-y-2">
+                    <thead className="rounded-xl text-s text-gray-100 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 ">
                         <tr>
-                            <th scope="col" className="px-6 py-3">
+                            <th scope="col" className=" px-5 py-3">
                                 Index
                             </th>
-                            <th scope="col" className="px-6 py-3">
+                            <th scope="col" className=" px-6 py-3">
                                 Name
                             </th>
 
-                            <th scope="col" className="px-6 py-3">
+                            <th scope="col" className="flex justify-center px-6 py-3">
                                 VoteCount
                             </th>
                             <th scope="col" className="">
@@ -86,47 +86,45 @@ const Connected = (props) => {
                         </tr>
                     </thead>
                     <tbody>
-
-
                         {props.candidates.map((candidate,index) => (
 
-                            <tr key={index} className="bg-gradient-to-r from-gray-900 via-purple-800 to-purple-900 ">
+                            
+
+                            <tr key={index} className="last:border-0 bg-white border-b-2 dark:bg-gray-900 dark:border-gray-700 mb-8">
 
                                 <td className="w-4 p-4">
-                                    <div className="flex items-center">
+                                    <div className="flex-items-center">
                                         <img className="w-10 h-10 rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Bharatiya_Janata_Party_logo.svg" alt="Jese image" />
                                     </div>
                                 </td>
 
-                                <th scope="row" className="flex items-center px-6 py-4 text-gray-100 whitespace-nowrap dark:text-white">
+                                <th scope="row" className="flex items-center px-6 py-6 text-gray-100 whitespace-nowrap dark:text-white">
+                                
+                                        <div className="text-xl font-normal ">{candidate.name}</div>
                                     
-                                    <div className="pl-3">
-                                        <div className="text-base font-semibold">{candidate.name}</div>
-                                    </div>
                                 </th>
 
                                 <td className="px-6 py-4">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{candidate.voteCount}</a>
+                                    {/* <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">{candidate.voteCount}</a> */}
+                                    <div className="flex justify-center">
+                                    {candidate.voteCount}
+                                    </div>
+                                    
                                 </td>
 
-                                <td className="px-6py-5">
+                                <td className="flex justify-center px-6 py-3">
                                     {
                                         candidate.index===props.number?
-                                        <button className='button w-24 h-10   cursor-pointer select-none active:translate-y-2  
-                                                active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841] active:border-b-[0px] 
-                                                transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841] 
-                                                rounded-full  border-[1px] border-red-800 bg-red-800' value={candidate.index} 
+                                        <button className='flex gap-1 hover:outline-none hover:ring hover:ring-fuchsia-600 transition duration-200 ease-in transform   hover:scale-105  px-10 py-3 rounded-xl font-bold text-gray-400 hover:text-white bg-[#262636] hover:bg-gradient-to-r from-[#ff05c9] via-[#c905ff] to-[#8402cf]' value={candidate.index} 
                                     onClick={click}>Vote</button>
                                     :
-                                    <button className='button w-24 h-10   cursor-pointer select-none active:translate-y-2  
-                                                active:[box-shadow:0_0px_0_0_#1b6ff8,0_0px_0_0_#1b70f841] active:border-b-[0px] 
-                                                transition-all duration-150 [box-shadow:0_10px_0_0_#1b6ff8,0_15px_0_0_#1b70f841] 
-                                                rounded-full  border-[1px] border-blue-800 bg-blue-800 ' value={candidate.index} 
+                                    <button className='flex gap-1 hover:outline-none hover:ring hover:ring-fuchsia-600 transition duration-200 ease-in transform   hover:scale-105  px-10 py-3 rounded-3xl font-bold text-gray-400 hover:text-white bg-[#262636] hover:bg-gradient-to-r from-[#ff05c9] via-[#c905ff] to-[#8402cf]' value={candidate.index} 
                                     onClick={click }>Vote</button>
                                     }
                                 </td>
 
                             </tr>
+                            
                         ))}
 
 
